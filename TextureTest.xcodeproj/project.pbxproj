@@ -16,6 +16,7 @@
 		1803AE672383EBC200C986F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1803AE662383EBC200C986F4 /* main.m */; };
 		1803AE712383EBC300C986F4 /* TextureTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1803AE702383EBC300C986F4 /* TextureTestTests.m */; };
 		1803AE7C2383EBC300C986F4 /* TextureTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1803AE7B2383EBC300C986F4 /* TextureTestUITests.m */; };
+		AC91A6870EAD31F1CF9CF5EE /* libPods-TextureTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDADD64B027235016F8D6C84 /* libPods-TextureTest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,9 @@
 		1803AE772383EBC300C986F4 /* TextureTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextureTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1803AE7B2383EBC300C986F4 /* TextureTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextureTestUITests.m; sourceTree = "<group>"; };
 		1803AE7D2383EBC300C986F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AC999492B35E0D7BE6CD766 /* Pods-TextureTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextureTest.release.xcconfig"; path = "Target Support Files/Pods-TextureTest/Pods-TextureTest.release.xcconfig"; sourceTree = "<group>"; };
+		CAAFBC0B8A1F743BF9CB543D /* Pods-TextureTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextureTest.debug.xcconfig"; path = "Target Support Files/Pods-TextureTest/Pods-TextureTest.debug.xcconfig"; sourceTree = "<group>"; };
+		EDADD64B027235016F8D6C84 /* libPods-TextureTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TextureTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC91A6870EAD31F1CF9CF5EE /* libPods-TextureTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,8 @@
 				1803AE6F2383EBC200C986F4 /* TextureTestTests */,
 				1803AE7A2383EBC300C986F4 /* TextureTestUITests */,
 				1803AE522383EBBF00C986F4 /* Products */,
+				D4B647AD5ACE11F61CCF82B1 /* Pods */,
+				F49CAD0BECE77D4C941C1031 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +144,24 @@
 			path = TextureTestUITests;
 			sourceTree = "<group>";
 		};
+		D4B647AD5ACE11F61CCF82B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAAFBC0B8A1F743BF9CB543D /* Pods-TextureTest.debug.xcconfig */,
+				5AC999492B35E0D7BE6CD766 /* Pods-TextureTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F49CAD0BECE77D4C941C1031 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDADD64B027235016F8D6C84 /* libPods-TextureTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +169,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1803AE802383EBC300C986F4 /* Build configuration list for PBXNativeTarget "TextureTest" */;
 			buildPhases = (
+				D1AAE6F1EA4B34F19803C2D9 /* [CP] Check Pods Manifest.lock */,
 				1803AE4D2383EBBF00C986F4 /* Sources */,
 				1803AE4E2383EBBF00C986F4 /* Frameworks */,
 				1803AE4F2383EBBF00C986F4 /* Resources */,
@@ -262,6 +288,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D1AAE6F1EA4B34F19803C2D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TextureTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1803AE4D2383EBBF00C986F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -375,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -427,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -437,6 +488,7 @@
 		};
 		1803AE812383EBC300C986F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAAFBC0B8A1F743BF9CB543D /* Pods-TextureTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,6 +505,7 @@
 		};
 		1803AE822383EBC300C986F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AC999492B35E0D7BE6CD766 /* Pods-TextureTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

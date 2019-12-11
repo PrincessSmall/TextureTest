@@ -1,0 +1,6 @@
+module Pods_TextureTest {
+  umbrella header "Pods-TextureTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
